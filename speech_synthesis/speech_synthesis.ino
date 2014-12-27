@@ -23,7 +23,7 @@ void Test_Speech(char input []) {
   text2speech.setPitch(16);
   
   strcpy(text, input);
-  text2speech.say(text);
+  text2speech.sayText(text);
 }
 
 // This event function executes whenever data is received from master
@@ -50,8 +50,16 @@ void setup() {
 
 void loop() {
   
-  while(Wire.available() == false)
-  {
+  // Overrid the serial loop to test
+  while (true) {
+    text2speech.setPitch(16);
+    text2speech.sayText("Hello, Salvius is standing by");
+    
+      delay(8000);
+
+  }
+
+  while(Wire.available() == false) {
   
   Serial.print(buffer);
     if (buffer != "") {

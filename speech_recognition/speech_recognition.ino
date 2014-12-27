@@ -5,7 +5,7 @@
 signal voice(A0);
 char prev;
 
-void setup(){
+void setup() {
   voice.f_enabled = true;
   voice.minVolume = 1000;
   voice.fconstant = 400;
@@ -18,7 +18,7 @@ void setup(){
   pinMode(led, OUTPUT); 
 }
 
-void loop(){
+void loop() {
     voice.sample();
     char p = voice.getPhoneme();
     
