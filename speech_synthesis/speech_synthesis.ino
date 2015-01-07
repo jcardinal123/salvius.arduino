@@ -6,10 +6,6 @@ const String NAME = "text_to_speech";
 // speech output is digital pin 10
 TTS tts;
 
-//char input[8] = {'a', 'r', 'd', 'u', 'i', 'n', 'o'};
-char input[8];
-int index = 0;
-
 void setup() {
   // higher values = lower voice pitch
   tts.setPitch(16);
