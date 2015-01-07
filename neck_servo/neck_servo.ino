@@ -2,6 +2,8 @@
 
 Servo servo1;
 
+const String NAME = "neck_servo";
+
 String inString = "";
 
 void setup() {
@@ -9,9 +11,7 @@ void setup() {
   //servo1.setMaximumPulse(2000);
   //servo1.setMinimumPulse(700);
 
-  Serial.begin(9600);
-
-  Serial.println("neck_servo");
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -23,6 +23,12 @@ void loop() {
       // and add it to the string:
       inString += (char)inChar; 
     }
+
+    if (inChar == ' ') {
+      // Print the board name to identify with python code
+      Serial.println(NAME);
+    }
+
     // if you get a newline, print the string,
     // then the string's value:
     if (inChar == '\n') {
@@ -35,4 +41,5 @@ void loop() {
     }
   }
 }
+
 
