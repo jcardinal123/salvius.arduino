@@ -36,7 +36,7 @@ void loop() {
 
       servo1.write(inString.toInt());
 
-      // clear the string for new input:
+      // clear the string for new input
       inString = ""; 
     }
   }
